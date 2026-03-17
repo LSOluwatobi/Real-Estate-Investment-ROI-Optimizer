@@ -54,14 +54,18 @@ The Lasso model’s coefficients provide a "map" for where to invest. By analyzi
 2.  **Scarcity Premium:** A **Waterfront** view adds an average of **$557,562** to the property value—the single largest physical feature driver.
 3.  **Quality vs. Quantity:** **Grade (Construction quality)** and **View** significantly outperformed **Total Bedrooms** in value contribution. In fact, adding bedrooms without increasing overall quality actually showed a negative coefficient (-$33k), suggesting an "over-crowding" penalty in high-end markets.
 
+![ROI Drivers](assets/roi_drivers.png)
 -----
 
-## **📈 Model Diagnostics**
+## **📈 Visual Analytics & Diagnostics**
 
-### **Actual vs. Predicted Analysis**
+### **1. Prediction Accuracy (Lasso)**
+![Actual vs Predicted](assets/actual_vs_predicted.png)
+The model shows high precision along the **45-degree identity line** for the core market ($300k - $1.2M). The "fanning" (heteroscedasticity) in the $2M+ tier indicates that luxury estates follow unique logic requiring specialized sub-models.
 
-The model shows high reliability for properties under $1.5M. The "fanning out" (heteroscedasticity) observed in the luxury tier ($2M+) suggests that high-end estates follow unique pricing logic that may require a separate sub-model for elite portfolios.
-
+### **2. Feature Correlation (The Case for Regularization)**
+![Correlation Heatmap](assets/cor_matrix.png)
+The heatmap reveals high multicollinearity (e.g., `sqft_living` vs `grade` at 0.76). This justifies the use of **Ridge and Lasso** to prevent the model from becoming unstable or biased.
 -----
 
 ## **🚀 Implementation & Value**
