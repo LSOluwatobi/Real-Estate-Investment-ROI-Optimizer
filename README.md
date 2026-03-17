@@ -61,10 +61,12 @@ The Lasso model’s coefficients provide a "map" for where to invest. By analyzi
 
 ### **1. Prediction Accuracy (Lasso)**
 ![Actual vs Predicted](assets/actual_vs_predicted.png)
+
 The model shows high precision along the **45-degree identity line** for the core market ($300k - $1.2M). The "fanning" (heteroscedasticity) in the $2M+ tier indicates that luxury estates follow unique logic requiring specialized sub-models.
 
 ### **2. Feature Correlation (The Case for Regularization)**
 ![Correlation Heatmap](assets/cor_matrix.png)
+
 The heatmap reveals high multicollinearity (e.g., `sqft_living` vs `grade` at 0.76). This justifies the use of **Ridge and Lasso** to prevent the model from becoming unstable or biased.
 -----
 
